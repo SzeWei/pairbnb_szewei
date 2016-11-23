@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'listings/new'
+  resources :listings
+
+  # get 'welcome/index'
 
   resources :users, only: [:show, :edit, :update, :destroy] 
   

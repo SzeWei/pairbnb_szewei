@@ -1,0 +1,25 @@
+<%= form_for :listing, url: listings_path do |form| %>
+  <div class="text-field">
+    <%= form.label :name %>
+    <%= form.text_field :name, type: 'name' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :description %>
+    <%= form.text_field :description, type: 'description' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :address %>
+    <%= form.text_field :address, type: 'address' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :price %>
+    <%= form.text_field :price, type: 'price' %>
+  </div>
+
+  <div class="submit-field">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>

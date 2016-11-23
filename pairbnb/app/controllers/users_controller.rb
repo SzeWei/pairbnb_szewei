@@ -25,6 +25,14 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  # def edit
+  #   #edit user
+  # end
+
+  # def show
+  #   #user dashboard
+  # end
+
   private
 
   def avoid_sign_in
