@@ -1,4 +1,15 @@
-<%= form_for :session, url: session_path do |form| %>
+<%= form_for :user, url: session_path do |form| %>
+
+  <div class="text-field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, type: 'first_name' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, type: 'last_name' %>
+  </div>
+
   <div class="text-field">
     <%= form.label :email %>
     <%= form.text_field :email, type: 'email' %>
@@ -12,15 +23,6 @@
   <div class="submit-field">
     <%= form.submit %>
   </div>
-
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
-
-  <a href="/auth/facebook">Facebook Login</a>
 
 <% end %>
 
