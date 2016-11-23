@@ -8,13 +8,13 @@ class ApplicationController < ActionController::Base
     current_user.articles
   end
 
-	# def url_after_denied_access_when_signed_in
- #    Clearance.configuration.redirect_url
- #  end
+	def url_after_denied_access_when_signed_in
+    Clearance.configuration.redirect_url
+  end
 
- #  def url_after_denied_access_when_signed_out
- #    sign_in_url
- #  end
+  def url_after_denied_access_when_signed_out
+    sign_in_url
+  end
   
   protect_from_forgery with: :exception
 
