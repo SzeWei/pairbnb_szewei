@@ -1,0 +1,18 @@
+<h4>
+	<a href="/listings"><%= @listing.name %></a><br>
+	<%= @listing.description %><br>
+	<%= @listing.address %><br>
+	<%= @listing.price %>
+
+</h4>
+
+<% if current_user.id == @user.id %>
+
+	<a href="/listings/<%= @listing.id %>/edit">Edit listing</a>
+	
+	<%= form_for @listing do |form| %>
+		<%= hidden_field_tag("_method", "delete") %>
+		<input type='submit' value="Delete">
+	<% end %>	
+
+<% end %>	

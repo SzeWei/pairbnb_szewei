@@ -1,0 +1,10 @@
+<%= form_for @listing do |form| %>
+	<%= hidden_field_tag("_method", "patch") %>
+	<h4>Name</h4><input type='text' placeholder="Name of property" name="listing[name]" value= "<%= @listing.name %>"><br>
+	<h4>Description</h4><input type='text' placeholder="Description of Property" name="listing[description]" value= "<%= @listing.description %>"><br>
+	<h4>Address</h4><input type='text' placeholder="Address of property" name="listing[address]" value= "<%= @listing.address %>"><br>
+	<h4>Price</h4><input type='text' placeholder="Price of property" name="listing[price]" value= "<%= @listing.price %>"><br>
+	<input type='submit' value="Submit">
+	<a href="/listings/<%= @listing.id %>"><button>Cancel</button></a>
+<% end %>
+

@@ -1,7 +1,19 @@
 <h1>All My Listings</h1>
 
+<%= link_to "Add New Listing", new_listing_path %>
+
+
 <% @listings.each do |listing| %>
-	<h4><a href="/listings"><%=listing.name %></a>
-	</h4>
-	
+	<% if listing.user_id == current_user.id %>
+		<h4>
+		<a href="/listings/<%= listing.id %>">
+		<%= listing.name %></a></br></h4>
+		<h5>
+		<%= listing.description %>
+		<%= listing.address %>
+		<%= listing.price %>
+
+		</h5>
+	<% end %>
+
 <% end %>	
