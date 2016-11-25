@@ -7,22 +7,33 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 30.times do 
-	user = User.new
-	user.first_name = Faker::Name.first_name
-	user.last_name = Faker::Name.last_name
-	user.email = Faker::Internet.email
-	user.password = "1234"
-		if user.save
-			number_of_listing = rand(0..50)
-			number_of_listing.times do
-				listing = Listing.new
-				listing.name = Faker::Company.name
-				listing.description = Faker::Company.catch_phrase
-				listing.address = Faker::Address.country
-				listing.price = Faker::Number.between(30, 1000)
-				user.listings << listing
-				user.save
-			end
-		end
+	User.create(
+		first_name: Faker::Name.first_name,
+		last_name: Faker::Name.last_name,
+		email: Faker::Internet.email,
+		password: "1234",
+		role: 1
+		)
+end
 
-end 
+User.all.each do |user|
+	5.times do 
+	  user.listings.create(
+	    address: Faker::Address.country,
+	    description: Faker::Lorem.paragraph(2),
+	    price: rand(50..1000),
+	    name: Faker::Company.name
+	    )
+  end
+end
+
+50.times do 
+	User.create(
+		first_name: Faker::Name.first_name,
+		last_name: Faker::Name.last_name,
+		email: Faker::Internet.email,
+		password: "123456",
+		role: 2
+		)
+end
+

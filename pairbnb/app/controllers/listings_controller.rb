@@ -17,9 +17,13 @@ class ListingsController < ApplicationController
 	end
 
 	def index
-		
-		@listings = Listing.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 10)
-		# render template: "listings/index"
+		@user = current_user
+		if @user.role == "landlord"
+			@listings = Listing.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 10)
+		else 
+			@listings = Listing.all.paginate(:page => params[:page], :per_page => 10).order('name DESC')
+		end
+		render template: "listings/index"
 	end
 
 	def show

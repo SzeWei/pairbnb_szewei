@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   include Clearance::User
 
-  has_one :role
   has_many :listings
   has_many :authentications, :dependent => :destroy
+
+  enum role: {superadmin: 0, landlord: 1, tenant: 2}
 
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
