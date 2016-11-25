@@ -4,7 +4,7 @@
 
 
 <% @listings.each do |listing| %>
-	<% if listing.user_id == current_user.id %>
+
 		<h4>
 		<a href="/listings/<%= listing.id %>">
 		<%= listing.name %></a></br></h4>
@@ -12,8 +12,8 @@
 		<%= listing.description %>
 		<%= listing.address %>
 		<%= listing.price %>
-
 		</h5>
-	<% end %>
 
 <% end %>	
+
+<%= will_paginate @listings %>

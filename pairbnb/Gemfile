@@ -31,7 +31,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 # use faker to seed data for testing
 gem 'faker'
-
+# will_paginate is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel.
+gem 'will_paginate', '~> 3.1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

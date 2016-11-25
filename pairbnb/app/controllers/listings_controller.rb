@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
   end
 
   def create
+  	# @listing = current_user.listing.new(listing_params)
   	listing = Listing.new
   	listing.name = params[:listing][:name]
   	listing.description = params[:listing][:description]
@@ -16,14 +17,14 @@ class ListingsController < ApplicationController
 	end
 
 	def index
-		@listings = Listing.all
-		render template: "listings/index"
+		
+		@listings = Listing.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 10)
+		# render template: "listings/index"
 	end
 
 	def show
 		@listing = Listing.find(params[:id])
 		@user = @listing.user
-
 		render template: "listings/show"
 	end
 
@@ -33,12 +34,11 @@ class ListingsController < ApplicationController
 	end
 
 	def update
-		# params.require(:listing).permit(:name, :description, :address, :price)
 		@listing = Listing.find(params[:id])
 		@listing.name = params[:listing][:name]
-  	@listing.description = params[:listing][:description]
   	@listing.address = params[:listing][:address]
   	@listing.price = params[:listing][:price]
+  	@listing.description = params[:listing][:description]
 		@listing.save
 		redirect_to "/listings/#{@listing.id}"
 	end
@@ -47,4 +47,10 @@ class ListingsController < ApplicationController
 		Listing.destroy(params[:id])
 		redirect_to "/listings"
 	end
+
+	private
+
+		def listing_params
+			params.require(:listing).permit(:name, :description, :address, :price)
+		end
 end
