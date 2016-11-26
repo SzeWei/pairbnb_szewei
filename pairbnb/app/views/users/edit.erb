@@ -1,0 +1,20 @@
+<h2>Edit Profile</h2>
+<%= form_for @user do |form| %>
+	<%= hidden_field_tag("_method", "patch") %>
+	<%= file_field(:user, :avatar) %>
+	<h4>First Name</h4><input type='text' placeholder="First Name" name="user[first_name]" value= "<%= @user.first_name %>"><br>
+	<h4>Last Name</h4><input type='text' placeholder="Last Name" name="user[last_name]" value= '<%= @user.last_name %>'><br>
+	<h4>Email</h4><input type='text' placeholder="Email" name="user[email]" value= "<%= @user.email %>"><br>
+	<h4>Password</h4><input type=password placeholder="Password" name="user[password]"><br>
+
+	<label>
+    <input type="checkbox" name="role" value="1">
+    Landlord
+</label>
+<label>
+    <input type="checkbox" name="role" value="2">
+    Tenant
+</label>
+	<input type='submit' value="Update">
+	<a href="/users/<%= @user.id %>"><button>Cancel</button></a>
+<% end %>

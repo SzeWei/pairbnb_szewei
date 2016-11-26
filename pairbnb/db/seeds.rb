@@ -7,9 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 30.times do 
-	User.create(
+	user = User.create(
 		first_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name,
+		avatar: Pathname.new(Rails.root + "app/assets/images/avatar/#{rand(1..6)}.png").open, 
 		email: Faker::Internet.email,
 		password: "1234",
 		role: 1
@@ -31,6 +32,7 @@ end
 	User.create(
 		first_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name,
+		avatar: Pathname.new(Rails.root + "app/assets/images/avatar/#{rand(1..6)}.png").open, 
 		email: Faker::Internet.email,
 		password: "123456",
 		role: 2

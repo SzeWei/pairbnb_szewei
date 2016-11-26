@@ -33,6 +33,9 @@ gem 'omniauth-facebook'
 gem 'faker'
 # will_paginate is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel.
 gem 'will_paginate', '~> 3.1.0'
+# upload image files from Ruby applications
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem "mini_magick"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

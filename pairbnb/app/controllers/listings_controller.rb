@@ -5,15 +5,12 @@ class ListingsController < ApplicationController
   end
 
   def create
-  	# @listing = current_user.listing.new(listing_params)
-  	listing = Listing.new
-  	listing.name = params[:listing][:name]
-  	listing.description = params[:listing][:description]
-  	listing.address = params[:listing][:address]
-  	listing.price = params[:listing][:price]
-		listing.user_id = current_user.id
-		listing.save
-		redirect_to '/listings'
+  	@listing = current_user.listings.new(listing_params)
+  	if @listing.save
+			redirect_to '/listings'
+    else
+        render 'new'
+    end
 	end
 
 	def index
@@ -39,12 +36,11 @@ class ListingsController < ApplicationController
 
 	def update
 		@listing = Listing.find(params[:id])
-		@listing.name = params[:listing][:name]
-  	@listing.address = params[:listing][:address]
-  	@listing.price = params[:listing][:price]
-  	@listing.description = params[:listing][:description]
-		@listing.save
-		redirect_to "/listings/#{@listing.id}"
+		if @listing.update(listing_params)
+			redirect_to "/listings/#{@listing.id}", notice: "Success!"
+		else 
+      render 'edit'
+    end
 	end
 
 	def destroy
@@ -54,7 +50,7 @@ class ListingsController < ApplicationController
 
 	private
 
-		def listing_params
-			params.require(:listing).permit(:name, :description, :address, :price)
-		end
+	def listing_params
+		params.require(:listing).permit(:name, :description, :address, :price, {photos: []})
+	end
 end

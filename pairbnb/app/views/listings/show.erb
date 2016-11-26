@@ -1,4 +1,8 @@
 <h4>
+
+	<% @listings.photos.each do |photo| %>
+		<%= image_tag @listing.photo.thumb.url %>
+	<% end %>
 	<a href="/listings"><%= @listing.name %></a><br>
 	<%= @listing.description %><br>
 	<%= @listing.address %><br>

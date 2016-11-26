@@ -1,6 +1,8 @@
 <h1>All My Listings</h1>
 
-<%= link_to "Add New Listing", new_listing_path %>
+<% if @user.role == "superadmin" || @user.role == "landlord" %>
+	<%= link_to "Add New Listing", new_listing_path %>
+<% end %>
 
 
 <% @listings.each do |listing| %>
