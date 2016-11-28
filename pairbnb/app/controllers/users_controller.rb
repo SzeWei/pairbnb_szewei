@@ -10,12 +10,12 @@ class UsersController < Clearance::UsersController
   # end
 
   def new
-    @user = user_from_params
+    @user = User.new
     render template: "users/new"
   end
 
   def create
-    @user = user_from_params
+    @user = User.new(user_params)
 
     if @user.save
       sign_in @user

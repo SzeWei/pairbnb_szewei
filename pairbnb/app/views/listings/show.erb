@@ -1,14 +1,17 @@
-<h4>
-
-	<% @listings.photos.each do |photo| %>
-		<%= image_tag @listing.photo.thumb.url %>
+<h2><a href="/listings"><%= @listing.name %></a></h2><br>
+	<% unless @listing.photos.empty? %> 
+		<% @listing.photos.each do |photo| %>
+			<%= image_tag photo.thumb.url %>
+		<% end %>
 	<% end %>
-	<a href="/listings"><%= @listing.name %></a><br>
-	<%= @listing.description %><br>
-	<%= @listing.address %><br>
-	<%= @listing.price %>
+	
+<ul>	
+	<li><%= @listing.description %></li><br>
+	<li><%= @listing.address %></li><br>
+	<li><%= @listing.price %></li>
+</ul>	
 
-</h4>
+
 
 <% if current_user.id == @user.id %>
 
@@ -18,5 +21,12 @@
 		<%= hidden_field_tag("_method", "delete") %>
 		<input type='submit' value="Delete">
 	<% end %>	
+
+
+ <% if signed_in? %>
+ 	<%=  render '/reservations/form' %>
+ <% else %>
+ 	<p>Please <%= link_to "Sign in", sign_in_path %> to make a reservation</p>	
+ <% end %>	
 
 <% end %>	

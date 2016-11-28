@@ -7,7 +7,7 @@
     <li><%= link_to "About Us", "#" %></button></li>
     <% if signed_in? %>
 			<li><%= link_to "My Listings", "/listings" %></button></li>
-			<li><%= link_to "My Profile", "/users/#{@user.id}" %></button></li>
+			<li><%= link_to "My Profile", user_path(current_user.id) %></button></li>
 
 		<% end %>
   </ul>

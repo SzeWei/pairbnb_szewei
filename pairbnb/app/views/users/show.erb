@@ -10,7 +10,9 @@
 
 <% if current_user.id == @user.id %>
 
-	<a href="/users/<%= @user.id %>/edit">Edit profile</a>
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+
 	<a href="/users/<%= @user.id %>/delete">Delete Account</a>
 
 <% end %>
