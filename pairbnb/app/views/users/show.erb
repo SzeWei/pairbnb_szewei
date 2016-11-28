@@ -1,8 +1,7 @@
 <h1>Profile</h1>
 
 <p> Hello! Welcome to <%= @user.first_name %>'s page</p>
-
-<%= image_tag @user.avatar.thumb.url %>
+<%= image_tag @user.avatar.url %>
 
 <p> Name: <%= @user.first_name %> <%= @user.last_name %></br>
 
