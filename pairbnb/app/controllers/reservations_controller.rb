@@ -1,14 +1,34 @@
 class ReservationsController < ApplicationController
 	
 	def create
+		# @user = User.find(params[:reservation][:id])
+		# listing = Listing.find(params[:listing_id])
+		# reservation = listing.reservations.new(reservation_params)
+		# reservation.calculate_price	
+		# if reservation.save
+		# 	# ReservationMailer.booking_email(@user.email).deliver_later
+		# 	redirect_to listing, notice: "Reservation successful!"
+		# else
+		# 	redirect_to listing, notice: "Reservation failed!"
+		# end
 		listing = Listing.find(params[:listing_id])
-		reservation = listing.reservations.new(reservation_params)
-		reservation.calculate_price	
-		if reservation.save
-			redirect_to listing, notice: "Reservation successful!"
-		else
-			redirect_to listing, notice: "Reservation failed!"
+    reservation = listing.reservations.new(reservation_params)
+    reservation.calculate_price
+    host = reservation.listing
+    @user = reservation.user
+    if reservation.save
+    	ReservationMailer.booking_email(@user, host, reservation.id).deliver_now
+      redirect_to listing, notice: "Reservation successful!"
+    else
+      redirect_to listing, notice: "Reservation failed!"
+    end
+	end
 
+	def show
+		@reservation = Reservation.find(params[:id])
+		@user = @reservation.user
+		@listing = @reservation.listing
+		render template: "reservations/show"
 	end
 
 	private

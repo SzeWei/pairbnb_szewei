@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Pairbnb, <%= @host.user.first_name %></h1>
+    <p>
+      You have received a booking from <%= @customer.first_name %> <%= @customer.last_name %>.<br>
+    </p>
+    <p>
+      You can see the details of the booking made  <a href="<%= @url %>">here</a>.
+    </p>
+  </body>
+</html>

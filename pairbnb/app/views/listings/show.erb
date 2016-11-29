@@ -1,4 +1,4 @@
-<h2><a href="/listings"><%= @listing.name %></a></h2><br>
+<h2><%= @listing.name %></h2><br>
 	<% unless @listing.photos.empty? %> 
 		<% @listing.photos.each do |photo| %>
 			<%= image_tag photo.thumb.url %>
@@ -11,7 +11,11 @@
 	<li><%= @listing.price %></li>
 </ul>	
 
-
+<% if signed_in? & current_user.role == "superadmin" || current_user.role == "tenant" %>
+	<%=  render '/reservations/form' %>
+<% elsif !signed_in? %>
+	<p>Please <%= link_to "Sign in", sign_in_path %> to make a reservation</p>	
+<% end %>	
 
 <% if current_user.id == @user.id %>
 
@@ -21,12 +25,5 @@
 		<%= hidden_field_tag("_method", "delete") %>
 		<input type='submit' value="Delete">
 	<% end %>	
-
-
- <% if signed_in? %>
- 	<%=  render '/reservations/form' %>
- <% else %>
- 	<p>Please <%= link_to "Sign in", sign_in_path %> to make a reservation</p>	
- <% end %>	
 
 <% end %>	

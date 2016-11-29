@@ -15,29 +15,29 @@ class UsersController < Clearance::UsersController
   end
 
   def create
-  #   @user = User.new(user_params)
+    @user = User.new(user_params)
 
-  #   if @user.save
-      
-  #     UserMailer.welcome_email(@user).deliver_later
-  #     render template: "users/edit"
-  #   end
-  # end
-
-    respond_to do |format|
-      if @user.save
-        sign_in @user
-        # Tell the UserMailer to send a welcome email after save
-        ReservationMailer.reservation_email(@user).deliver_now
- 
-        format.html { redirect_to(@user, notice: 'User was successfully created.') }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+       sign_in @user
+      # UserMailer.welcome_email(@user).deliver_later
+      render template: "users/edit"
     end
   end
+
+  #   respond_to do |format|
+  #     if @user.save
+  #       sign_in @user
+  #       # Tell the UserMailer to send a welcome email after save
+  #      UserMailer.welcome_email(@user).deliver_later
+ 
+  #       format.html { redirect_to(@user, notice: 'User was successfully created.') }
+  #       format.json { render json: @user, status: :created, location: @user }
+  #     else
+  #       format.html { render action: 'new' }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   def show
     @user = User.find(params[:id])
@@ -49,7 +49,6 @@ class UsersController < Clearance::UsersController
   end
 
   def update
-    byebug
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to "/users/#{@user.id}", notice: "Success!"
