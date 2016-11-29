@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'listings/new'
 
   resources :listings do
-    resources :reservations, only: [:create]
+    resources :reservations, only: [:create, :show]
   end
   # get 'welcome/index'
 
