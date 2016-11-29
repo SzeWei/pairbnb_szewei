@@ -17,7 +17,8 @@ class ReservationsController < ApplicationController
     host = reservation.listing
     @user = reservation.user
     if reservation.save
-    	ReservationMailer.booking_email(@user, host, reservation.id).deliver_now
+    	# ReservationJob.perform_later(@user, host, reservation.id)
+    	ReservationMailer.booking_email(@user, host, reservation.id).deliver_later
       redirect_to listing, notice: "Reservation successful!"
     else
       redirect_to listing, notice: "Reservation failed!"
