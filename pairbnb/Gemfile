@@ -41,6 +41,8 @@ gem "letter_opener", :group => :development
 # Sidekiq uses threads to handle many jobs at the same time in the same process. 
 gem 'sidekiq'
 gem 'redis-namespace'
+# The Braintree gem provides integration access to the Braintree Gateway.
+gem 'braintree'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
