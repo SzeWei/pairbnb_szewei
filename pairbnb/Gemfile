@@ -43,6 +43,8 @@ gem 'sidekiq'
 gem 'redis-namespace'
 # The Braintree gem provides integration access to the Braintree Gateway.
 gem 'braintree'
+# Gon allows us to set variables in our controllers and then access them from JavaScript
+gem 'gon', '~> 5.1.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

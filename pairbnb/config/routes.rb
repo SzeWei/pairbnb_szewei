@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # get 'listings/new'
-
+  resources :reservations, only: [] do
+    resources :payments, only: [:new, :create]
+  end
+  
   resources :listings do
     resources :reservations, only: [:create, :show]
   end

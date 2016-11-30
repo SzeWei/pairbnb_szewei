@@ -14,15 +14,15 @@ class ReservationsController < ApplicationController
 		listing = Listing.find(params[:listing_id])
     reservation = listing.reservations.new(reservation_params)
     reservation.calculate_price
-    host = reservation.listing
-    @user = reservation.user
-    if reservation.save
-    	# ReservationJob.perform_later(@user, host, reservation.id)
-    	ReservationMailer.booking_email(@user, host, reservation.id).deliver_later
-      redirect_to listing, notice: "Reservation successful!"
-    else
-      redirect_to listing, notice: "Reservation failed!"
-    end
+    # host = reservation.listing
+    # @user = reservation.user
+    # if reservation.save
+    # 	ReservationMailer.booking_email(@user, host, reservation.id).deliver_later
+   	# 	ReservationJob.perform_later(@user, host, reservation.id)
+      redirect_to new_reservation_payment_path(reservation.id)
+    # else
+    #   redirect_to listing, notice: "Reservation failed!"
+    # end
 	end
 
 	def show
