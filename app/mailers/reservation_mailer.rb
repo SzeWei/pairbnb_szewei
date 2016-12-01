@@ -5,7 +5,7 @@ class ReservationMailer < ApplicationMailer
     @customer = customer
     @host = host
     @reservation = reservation_id
-    @url  = "http://localhost:3000/listings/#{@host.user.id}/reservations/#{@reservation}"
+    @url  = "https://szewei-pairbnb.herokuapp.com/listings/#{@host.user.id}/reservations/#{@reservation}"
     mail(to: @host.user.email, subject: 'Your reservation is confirmed!')
   end
 end
