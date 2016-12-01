@@ -6,3 +6,4 @@ development:
   BRAINTREE_MERCHANT_ID: '9t2qjbhr8pyrwrz2'
   BRAINTREE_PUBLIC_KEY: 'jrsxszrhvy45fbfb'
   BRAINTREE_PRIVATE_KEY: 'b63f17b457f36e5cfd91db660a707414'
+  REDIS_URL: 'redis://localhost:6379/0'

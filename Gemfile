@@ -49,6 +49,8 @@ gem 'gon', '~> 5.1.2'
 gem 'pg_search'
 # This gem enables serving assets in production and setting your logger to standard out
 gem 'rails_12factor', group: :production
+# Error monitoring service
+gem "skylight"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
