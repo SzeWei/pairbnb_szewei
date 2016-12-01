@@ -1,0 +1,8 @@
+development:
+  APP_KEY: '1796570467254383'
+  APP_SECRET: 'ada293cb6a3f3583553ad0ad8cf612ce'
+  GMAIL_USERNAME: 'khooszewei92@gmail.com'
+  GMAIL_PASSWORD: '1003savannah'
+  BRAINTREE_MERCHANT_ID: '9t2qjbhr8pyrwrz2'
+  BRAINTREE_PUBLIC_KEY: 'jrsxszrhvy45fbfb'
+  BRAINTREE_PRIVATE_KEY: 'b63f17b457f36e5cfd91db660a707414'

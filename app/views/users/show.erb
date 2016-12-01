@@ -1,0 +1,18 @@
+<h1>Profile</h1>
+
+<p> Hello! Welcome to <%= @user.first_name %>'s page</p>
+<%= image_tag @user.avatar.thumb.url %>
+
+<p> Name: <%= @user.first_name %> <%= @user.last_name %></br>
+
+<p> email: <%= @user.email %></br>
+
+<% if current_user.id == @user.id %>
+
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+
+	<a href="/users/<%= @user.id %>/delete">Delete Account</a>
+
+<% end %>
+

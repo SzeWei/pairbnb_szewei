@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <title>Pairbnb</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%= include_gon %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    
+    <% if signed_in? %>
+      <%= current_user.email %>
+      <%= button_to "Log Out", "/sign_out", method: :delete %>
+    <% end %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <%= render partial: "layouts/navbar" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="pusher"></div>
+    <div id="footer">
+      <ul>
+        <li>About Us</li>
+        <li>Privacy</li>
+        <li>Terms</li>
+        <li>Contact Us</li>
+        <li>Signup for newsletter</li>
+      </ul>
+    </div>
+
+  </body>
+</html>
