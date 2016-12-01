@@ -16,9 +16,9 @@ class ListingsController < ApplicationController
 	def index
 		@user = current_user
 		if @user.role == "landlord"
-			@listings = Listing.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 10)
+			@listings = Listing.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 5)
 		else 
-			@listings = Listing.all.paginate(:page => params[:page], :per_page => 10).order('name DESC')
+			@listings = Listing.all.paginate(:page => params[:page], :per_page => 5).order('name DESC')
 		end
 		render template: "listings/index"
 	end
@@ -46,6 +46,11 @@ class ListingsController < ApplicationController
 	def destroy
 		Listing.destroy(params[:id])
 		redirect_to "/listings"
+	end
+
+	def search
+		@listings = Listing.search_by_address(params[:search])
+		render template: "listings/search"
 	end
 
 	private

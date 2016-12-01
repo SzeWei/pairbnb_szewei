@@ -45,6 +45,8 @@ gem 'redis-namespace'
 gem 'braintree'
 # Gon allows us to set variables in our controllers and then access them from JavaScript
 gem 'gon', '~> 5.1.2'
+# PgSearch builds named scopes that take advantage of PostgreSQL's full text search.
+gem 'pg_search'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,14 +1,21 @@
 <nav class="menu">
   <ul class="active">
   	<% if !signed_in? %>
-		<li class="current-item"><%= link_to "Home", root_url %></li>  <li><%= link_to "Login", "/sign_in" %></button></li>
-    <li><%= link_to "Signup", "/sign_up" %></button></li>
+  		<li class="current-item"><%= link_to "Home", root_url %></li>  
+      <li><%= link_to "Login", "/sign_in" %></button></li>
+      <li><%= link_to "Signup", "/sign_up" %></button></li>
     <% end %>
-    <li><%= link_to "About Us", "#" %></button></li>
+    <li><%= link_to "About Us", root_path %></button></li>
     <% if signed_in? %>
 			<li><%= link_to "My Listings", "/listings" %></button></li>
 			<li><%= link_to "My Profile", user_path(current_user.id) %></button></li>
-
+      <div class="search">
+      <form action="/listings/search" method="post">
+        <input name="authenticity_token" value="<%= form_authenticity_token%>" type="hidden">
+        <input type="text" name="search" placeholder="Enter keyword here..."/>
+        <input type="submit" value="Search"/>
+      </form>
+    </div>
 		<% end %>
   </ul>
 </nav>

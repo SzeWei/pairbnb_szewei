@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include Clearance::User
+  include PgSearch
   
   has_many :reservations
   has_many :listings
