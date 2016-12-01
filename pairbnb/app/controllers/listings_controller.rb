@@ -53,6 +53,10 @@ class ListingsController < ApplicationController
 		render template: "listings/search"
 	end
 
+	def filter
+		results = self.where("MIN(price, sale_price) >= :min AND MIN(price, sale_price) <= :max", min: min, max: max)
+	end
+
 	private
 
 	def listing_params
