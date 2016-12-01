@@ -85,7 +85,7 @@ Rails.application.configure do
   config.active_job.queue_name_delimiter = "_"
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
-  port:                 587,
+  port:                 25,
   domain:               'localhost:3000',
   user_name:            ENV['GMAIL_USERNAME'], 
   password:             ENV['GMAIL_PASSWORD'],
