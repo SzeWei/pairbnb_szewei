@@ -4011,3 +4011,162 @@ D, [2016-12-01T13:56:51.694135 #13481] DEBUG -- : [Braintree] <?xml version="1.0
 [Braintree]   <three-d-secure-info nil="true"/>
 [Braintree] </transaction>
 
+D, [2016-12-01T21:55:10.780841 #16223] DEBUG -- : [Braintree] [01/Dec/2016 13:55:10 UTC] POST /merchants/9t2qjbhr8pyrwrz2/client_token
+D, [2016-12-01T21:55:10.782931 #16223] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-12-01T21:55:11.226723 #16223]  INFO -- : [Braintree] [01/Dec/2016 13:55:11 UTC] POST /merchants/9t2qjbhr8pyrwrz2/client_token 201
+D, [2016-12-01T21:55:11.226823 #16223] DEBUG -- : [Braintree] [01/Dec/2016 13:55:11 UTC] 201 Created
+D, [2016-12-01T21:55:11.229071 #16223] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJiMDcxMDIwMjk1M2VjOGJhZGZkYTYyMGViMmM4ZjA0ODdkNWQ2NWQ3YmQ0MDBlNDJjODM2Mjk5M2YzNTIwMGU3fGNyZWF0ZWRfYXQ9MjAxNi0xMi0wMVQxMzo1NToxMS4yOTc2Njk2NTQrMDAwMFx1MDAyNm1lcmNoYW50X2lkPTl0MnFqYmhyOHB5cndyejJcdTAwMjZwdWJsaWNfa2V5PWpyc3hzenJodnk0NWZiZmIiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvOXQycWpiaHI4cHlyd3J6Mi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbImN2diJdLCJlbnZpcm9ubWVudCI6InNhbmRib3giLCJjbGllbnRBcGlVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvOXQycWpiaHI4cHlyd3J6Mi9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhbmFseXRpY3MiOnsidXJsIjoiaHR0cHM6Ly9jbGllbnQtYW5hbHl0aWNzLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20vOXQycWpiaHI4cHlyd3J6MiJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjp0cnVlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJTb2xhciBFY29wYWNrIiwiY2xpZW50SWQiOm51bGwsInByaXZhY3lVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vcHAiLCJ1c2VyQWdyZWVtZW50VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3RvcyIsImJhc2VVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFzc2V0c1VybCI6Imh0dHBzOi8vY2hlY2tvdXQucGF5cGFsLmNvbSIsImRpcmVjdEJhc2VVcmwiOm51bGwsImFsbG93SHR0cCI6dHJ1ZSwiZW52aXJvbm1lbnROb05ldHdvcmsiOnRydWUsImVudmlyb25tZW50Ijoib2ZmbGluZSIsInVudmV0dGVkTWVyY2hhbnQiOmZhbHNlLCJicmFpbnRyZWVDbGllbnRJZCI6Im1hc3RlcmNsaWVudDMiLCJiaWxsaW5nQWdyZWVtZW50c0VuYWJsZWQiOnRydWUsIm1lcmNoYW50QWNjb3VudElkIjoic29sYXJlY29wYWNrIiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sImNvaW5iYXNlRW5hYmxlZCI6ZmFsc2UsIm1lcmNoYW50SWQiOiI5dDJxamJocjhweXJ3cnoyIiwidmVubW8iOiJvZmYifQ==</value>
+[Braintree] </client-token>
+
+D, [2016-12-01T21:55:27.882061 #16223] DEBUG -- : [Braintree] [01/Dec/2016 13:55:27 UTC] POST /merchants/9t2qjbhr8pyrwrz2/transactions
+D, [2016-12-01T21:55:27.882192 #16223] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <transaction>
+[Braintree]   <amount type="integer">500</amount>
+[Braintree]   <payment-method-nonce>cdd1cf34-cf40-0e60-1e93-1cc71e3e3d97</payment-method-nonce>
+[Braintree]   <type>sale</type>
+[Braintree] </transaction>
+
+I, [2016-12-01T21:55:28.802525 #16223]  INFO -- : [Braintree] [01/Dec/2016 13:55:28 UTC] POST /merchants/9t2qjbhr8pyrwrz2/transactions 201
+D, [2016-12-01T21:55:28.802601 #16223] DEBUG -- : [Braintree] [01/Dec/2016 13:55:28 UTC] 201 Created
+D, [2016-12-01T21:55:28.802977 #16223] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <transaction>
+[Braintree]   <id>aaed61yv</id>
+[Braintree]   <status>authorized</status>
+[Braintree]   <type>sale</type>
+[Braintree]   <currency-iso-code>USD</currency-iso-code>
+[Braintree]   <amount>500.00</amount>
+[Braintree]   <merchant-account-id>solarecopack</merchant-account-id>
+[Braintree]   <sub-merchant-account-id nil="true"/>
+[Braintree]   <master-merchant-account-id nil="true"/>
+[Braintree]   <order-id nil="true"/>
+[Braintree]   <created-at type="datetime">2016-12-01T13:55:28Z</created-at>
+[Braintree]   <updated-at type="datetime">2016-12-01T13:55:28Z</updated-at>
+[Braintree]   <customer>
+[Braintree]     <id nil="true"/>
+[Braintree]     <first-name nil="true"/>
+[Braintree]     <last-name nil="true"/>
+[Braintree]     <company nil="true"/>
+[Braintree]     <email nil="true"/>
+[Braintree]     <website nil="true"/>
+[Braintree]     <phone nil="true"/>
+[Braintree]     <fax nil="true"/>
+[Braintree]   </customer>
+[Braintree]   <billing>
+[Braintree]     <id nil="true"/>
+[Braintree]     <first-name nil="true"/>
+[Braintree]     <last-name nil="true"/>
+[Braintree]     <company nil="true"/>
+[Braintree]     <street-address nil="true"/>
+[Braintree]     <extended-address nil="true"/>
+[Braintree]     <locality nil="true"/>
+[Braintree]     <region nil="true"/>
+[Braintree]     <postal-code nil="true"/>
+[Braintree]     <country-name nil="true"/>
+[Braintree]     <country-code-alpha2 nil="true"/>
+[Braintree]     <country-code-alpha3 nil="true"/>
+[Braintree]     <country-code-numeric nil="true"/>
+[Braintree]   </billing>
+[Braintree]   <refund-id nil="true"/>
+[Braintree]   <refund-ids type="array"/>
+[Braintree]   <refunded-transaction-id nil="true"/>
+[Braintree]   <partial-settlement-transaction-ids type="array"/>
+[Braintree]   <authorized-transaction-id nil="true"/>
+[Braintree]   <settlement-batch-id nil="true"/>
+[Braintree]   <shipping>
+[Braintree]     <id nil="true"/>
+[Braintree]     <first-name nil="true"/>
+[Braintree]     <last-name nil="true"/>
+[Braintree]     <company nil="true"/>
+[Braintree]     <street-address nil="true"/>
+[Braintree]     <extended-address nil="true"/>
+[Braintree]     <locality nil="true"/>
+[Braintree]     <region nil="true"/>
+[Braintree]     <postal-code nil="true"/>
+[Braintree]     <country-name nil="true"/>
+[Braintree]     <country-code-alpha2 nil="true"/>
+[Braintree]     <country-code-alpha3 nil="true"/>
+[Braintree]     <country-code-numeric nil="true"/>
+[Braintree]   </shipping>
+[Braintree]   <custom-fields/>
+[Braintree]   <avs-error-response-code nil="true"/>
+[Braintree]   <avs-postal-code-response-code>I</avs-postal-code-response-code>
+[Braintree]   <avs-street-address-response-code>I</avs-street-address-response-code>
+[Braintree]   <cvv-response-code>M</cvv-response-code>
+[Braintree]   <gateway-rejection-reason nil="true"/>
+[Braintree]   <processor-authorization-code>WRXJ47</processor-authorization-code>
+[Braintree]   <processor-response-code>1000</processor-response-code>
+[Braintree]   <processor-response-text>Approved</processor-response-text>
+[Braintree]   <additional-processor-response nil="true"/>
+[Braintree]   <voice-referral-number nil="true"/>
+[Braintree]   <purchase-order-number nil="true"/>
+[Braintree]   <tax-amount nil="true"/>
+[Braintree]   <tax-exempt type="boolean">false</tax-exempt>
+[Braintree]   <credit-card>
+[Braintree]     <token nil="true"/>
+[Braintree]     <bin>411111</bin>
+[Braintree]     <last-4>1111</last-4>
+[Braintree]     <card-type>Visa</card-type>
+[Braintree]     <expiration-month>12</expiration-month>
+[Braintree]     <expiration-year>2019</expiration-year>
+[Braintree]     <customer-location>US</customer-location>
+[Braintree]     <cardholder-name nil="true"/>
+[Braintree]     <image-url>https://assets.braintreegateway.com/payment_method_logo/visa.png?environment=sandbox</image-url>
+[Braintree]     <prepaid>Unknown</prepaid>
+[Braintree]     <healthcare>Unknown</healthcare>
+[Braintree]     <debit>Unknown</debit>
+[Braintree]     <durbin-regulated>Unknown</durbin-regulated>
+[Braintree]     <commercial>Unknown</commercial>
+[Braintree]     <payroll>Unknown</payroll>
+[Braintree]     <issuing-bank>Unknown</issuing-bank>
+[Braintree]     <country-of-issuance>Unknown</country-of-issuance>
+[Braintree]     <product-id>Unknown</product-id>
+[Braintree]     <unique-number-identifier nil="true"/>
+[Braintree]     <venmo-sdk type="boolean">false</venmo-sdk>
+[Braintree]   </credit-card>
+[Braintree]   <status-history type="array">
+[Braintree]     <status-event>
+[Braintree]       <timestamp type="datetime">2016-12-01T13:55:28Z</timestamp>
+[Braintree]       <status>authorized</status>
+[Braintree]       <amount>500.00</amount>
+[Braintree]       <user>sze_wei92@hotmail.com</user>
+[Braintree]       <transaction-source>api</transaction-source>
+[Braintree]     </status-event>
+[Braintree]   </status-history>
+[Braintree]   <plan-id nil="true"/>
+[Braintree]   <subscription-id nil="true"/>
+[Braintree]   <subscription>
+[Braintree]     <billing-period-end-date nil="true"/>
+[Braintree]     <billing-period-start-date nil="true"/>
+[Braintree]   </subscription>
+[Braintree]   <add-ons type="array"/>
+[Braintree]   <discounts type="array"/>
+[Braintree]   <descriptor>
+[Braintree]     <name nil="true"/>
+[Braintree]     <phone nil="true"/>
+[Braintree]     <url nil="true"/>
+[Braintree]   </descriptor>
+[Braintree]   <recurring type="boolean">false</recurring>
+[Braintree]   <channel nil="true"/>
+[Braintree]   <service-fee-amount nil="true"/>
+[Braintree]   <escrow-status nil="true"/>
+[Braintree]   <disbursement-details>
+[Braintree]     <disbursement-date nil="true"/>
+[Braintree]     <settlement-amount nil="true"/>
+[Braintree]     <settlement-currency-iso-code nil="true"/>
+[Braintree]     <settlement-currency-exchange-rate nil="true"/>
+[Braintree]     <funds-held nil="true"/>
+[Braintree]     <success nil="true"/>
+[Braintree]   </disbursement-details>
+[Braintree]   <disputes type="array"/>
+[Braintree]   <payment-instrument-type>credit_card</payment-instrument-type>
+[Braintree]   <processor-settlement-response-code></processor-settlement-response-code>
+[Braintree]   <processor-settlement-response-text></processor-settlement-response-text>
+[Braintree]   <three-d-secure-info nil="true"/>
+[Braintree] </transaction>
+
